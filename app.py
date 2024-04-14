@@ -3,11 +3,11 @@ from random import randint
 DICE_TYPES = ("D3", "D4", "D6", "D8", "D10", "D12", "D20", "D100")
 
 
-def dice_roll(input):
+def dice_roll(dice_input):
     for dice in DICE_TYPES:
-        if dice in input:
+        if dice in dice_input:
             try:
-                multiply, modifier = input.split(dice)
+                multiply, modifier = dice_input.split(dice)
             except ValueError:
                 return "Wrong input!"
             dice_value = int(dice[1:])
